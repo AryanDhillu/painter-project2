@@ -9,9 +9,9 @@
 }
 
 .form-section {
-  margin-bottom: var(--spacing-xl);
-  padding-bottom: var(--spacing-lg);
-  border-bottom: 1px solid var(--medium-gray);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(219, 225, 235, 0.6);
 }
 
 .form-section:last-child {
@@ -20,44 +20,46 @@
 }
 
 .form-section h3 {
-  color: var(--primary-blue);
-  margin-bottom: var(--spacing-md);
-  font-size: 1.25rem;
+  color: #2B3674;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   display: flex;
   align-items: center;
-  gap: var(--spacing-xs);
+  gap: 0.5rem;
 }
 
 .form-section h3::before {
   content: '';
-  width: 4px;
-  height: 20px;
-  background: var(--cta-yellow);
+  width: 3px;
+  height: 16px;
+  background: #F4C542;
   border-radius: 2px;
 }
 
 .form-help {
-  color: var(--dark-gray);
-  font-size: 0.875rem;
-  margin-bottom: var(--spacing-md);
-  font-style: italic;
+  color: #707EAE;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+  font-style: normal;
+  opacity: 0.8;
 }
 
 /* File Upload */
 .file-upload-area {
-  border: 2px dashed var(--medium-gray);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-xl);
+  border: 2px dashed rgba(219, 225, 235, 0.8);
+  border-radius: 12px;
+  padding: 1.5rem;
   text-align: center;
-  transition: all var(--transition-fast);
+  transition: all 0.2s ease;
   cursor: pointer;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 1rem;
+  background: rgba(249, 249, 249, 0.3);
 }
 
 .file-upload-area:hover {
-  border-color: var(--primary-blue);
-  background-color: rgba(80, 125, 188, 0.05);
+  border-color: #2B3674;
+  background-color: rgba(43, 54, 116, 0.03);
 }
 
 .file-input {
@@ -154,10 +156,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-xs);
-  margin-top: var(--spacing-lg);
-  font-size: 1.125rem;
-  padding: var(--spacing-md) var(--spacing-lg);
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  background: #F4C542;
+  border: none;
+  color: #333;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.quote-form .btn:hover:not(:disabled) {
+  background: #e5b73a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(244, 197, 66, 0.3);
 }
 
 .quote-form .btn:disabled {
@@ -173,8 +187,8 @@
   }
   
   .form-section {
-    margin-bottom: var(--spacing-lg);
-    padding-bottom: var(--spacing-md);
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
   }
   
   .form-section h3 {

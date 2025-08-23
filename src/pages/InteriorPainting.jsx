@@ -66,7 +66,7 @@ const InteriorPainting = () => {
       <section 
         className="hero-section"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),url(${residentialImage})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25)),url(${residentialImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
@@ -84,10 +84,27 @@ const InteriorPainting = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1>Interior Painting That Transforms Your Space</h1>
-              <p>From cozy bedrooms to bold feature walls — we bring life and elegance to every corner of your home.</p>
+              <h1 style={{ 
+                color: '#ffffff !important',
+                textShadow: '0 2px 8px rgba(0,0,0,0.8)',
+                fontWeight: '500',
+                fontSize: '3.2rem',
+                filter: 'none',
+                opacity: '1',
+                background: 'transparent'
+              }}>
+                Interior Painting That Transforms Your Space
+              </h1>
+              <p style={{ 
+                color: '#ffffff !important',
+                textShadow: '0 1px 4px rgba(0,0,0,0.7)',
+                opacity: '1',
+                background: 'transparent'
+              }}>
+                From cozy bedrooms to bold feature walls — we bring life and elegance to every corner of your home.
+              </p>
               <div className="hero-buttons">
-                <Link to="/free-quote" className="btn btn-yellow">
+                <Link to="/free-quote" className="btn btn-yellow" style={{ zIndex: 10, position: 'relative' }}>
                   Get Free Estimate
                 </Link>
               </div>
@@ -170,71 +187,42 @@ const InteriorPainting = () => {
             <p>From living rooms to detailed trim work, our interior painting services cover it all. Explore what we offer — crafted to match your vision.</p>
           </motion.div>
           
-          <div className="transform-cards">
-                         <motion.div 
-               className="transform-card"
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               transition={{ duration: 0.6, delay: 0.1 }}
-             >
-               <div className="transform-card-image">
-                 <img src={wallpainting} alt="Wall Painting" />
-                 <div className="transform-card-overlay">
-                   <h3>Wall Painting</h3>
-                 </div>
-               </div>
-             </motion.div>
-             
-             <motion.div 
-               className="transform-card"
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               transition={{ duration: 0.6, delay: 0.2 }}
-             >
-               <div className="transform-card-image">
-                 <img src={ceilingpainting} alt="Ceiling Painting" />
-                 <div className="transform-card-overlay">
-                   <h3>Ceiling Painting</h3>
-                 </div>
-               </div>
-             </motion.div>
-             
-             <motion.div 
-               className="transform-card"
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               transition={{ duration: 0.6, delay: 0.3 }}
-             >
-               <div className="transform-card-image">
-                 <img src={trimandmolding} alt="Trim & Molding Painting" />
-                 <div className="transform-card-overlay">
-                   <h3>Trim & Molding Painting</h3>
-                 </div>
-               </div>
-             </motion.div>
-             
-             <motion.div 
-               className="transform-card"
-               initial={{ opacity: 0, y: 20 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               transition={{ duration: 0.6, delay: 0.4 }}
-             >
-               <div className="transform-card-image">
-                 <img src={accentwalls} alt="Accent Walls" />
-                 <div className="transform-card-overlay">
-                   <h3>Accent Walls</h3>
-                 </div>
-               </div>
-             </motion.div>
-          </div>
-          
-          <div className="transform-navigation">
-            <button className="nav-arrow nav-arrow-left">
-              <span>←</span>
-            </button>
-            <button className="nav-arrow nav-arrow-right">
-              <span>→</span>
-            </button>
+          <div className="transform-gallery">
+            <motion.div 
+              className="transform-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <img src={wallpainting} alt="Wall Painting" />
+            </motion.div>
+            
+            <motion.div 
+              className="transform-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <img src={ceilingpainting} alt="Ceiling Painting" />
+            </motion.div>
+            
+            <motion.div 
+              className="transform-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <img src={trimandmolding} alt="Trim & Molding Painting" />
+            </motion.div>
+            
+            <motion.div 
+              className="transform-card"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <img src={accentwalls} alt="Accent Walls" />
+            </motion.div>
           </div>
         </div>
       </section>

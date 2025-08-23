@@ -505,4 +505,73 @@
   .faq-delete-btn:hover {
     background-color: rgba(248, 113, 113, 0.1);
   }
+}
+
+/* FAQ Page Hero Section Styles */
+.faq-page .hero-section {
+  position: relative;
+  height: 80vh;
+  min-height: 600px;
+  background: url('/assets/faq-hero.png') center/cover no-repeat, #f0f0f0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+}
+
+.faq-page .hero-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(10, 91, 132, 0.3), rgba(80, 125, 188, 0.2));
+  z-index: 1;
+}
+
+.faq-page .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  padding: 0 var(--spacing-lg);
+}
+
+.faq-page .hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 400 !important;
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.faq-page .hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-xl);
+  opacity: 0.95;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .faq-page .hero-section {
+    height: 70vh;
+    min-height: 500px;
+  }
+  
+  .faq-page .hero-content {
+    padding: 0 var(--spacing-md);
+  }
+  
+  .faq-page .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .faq-page .hero-content p {
+    font-size: 1.125rem;
+  }
 } 

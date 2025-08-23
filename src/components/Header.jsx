@@ -190,6 +190,7 @@ const Header = () => {
               ))}
             </ul>
             {/* Show search bar only when not authenticated as admin */}
+            {/* COMMENTED OUT: Search for color inspiration functionality
             {!isAuthenticated && (
               <div className="search-container">
                 <input 
@@ -202,6 +203,7 @@ const Header = () => {
                 </button>
               </div>
             )}
+            */}
           </nav>
 
           {/* Mobile Menu Toggle */}

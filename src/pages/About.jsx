@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { FaPaintBrush, FaUsers, FaAward } from 'react-icons/fa';
+
 import paintbrushIcon from '../../public/assets/paintbrush.png';
 import ourJourneyImage from '../../public/assets/our-journey.png';
 import qualityCraftsmanshipIcon from '../../public/assets/quality-craftmenship.png';
@@ -125,26 +125,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className="stats-banner-section">
-        <div className="stats-banner-container">
-          <div className="stat-item">
-            <div className="stat-number">15+</div>
-            <div className="stat-label">Years Experience</div>
-          </div>
-          <div className="stat-item">
-            <div className="stat-number">1,200+</div>
-            <div className="stat-label">Projects Completed</div>
-          </div>
-          <div className="stat-item">
-            <div className="stat-number">98%</div>
-            <div className="stat-label">Customer Satisfaction</div>
-          </div>
-          <div className="stat-item">
-            <div className="stat-number">2</div>
-            <div className="stat-label">Year Warranty</div>
-          </div>
-        </div>
-      </section>
+
 
       <section className="principles-section">
         <div className="principles-container">
@@ -245,48 +226,6 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           />
-        </div>
-      </section>
-
-      <section className="about-features-section">
-        <h2>Why Choose Us?</h2>
-        <div className="about-features-grid">
-          <div className="feature-item">
-            <FaPaintBrush className="feature-icon" />
-            <span>Professional Excellence</span>
-            <p>We use only premium materials and meticulous prep to ensure a flawless, lasting finish—every time.</p>
-          </div>
-          <div className="feature-item">
-            <FaUsers className="feature-icon" />
-            <span>Experienced Team</span>
-            <p>Our painters are highly trained, background-checked, and bring years of expertise to every project.</p>
-          </div>
-          <div className="feature-item">
-            <FaAward className="feature-icon" />
-            <span>Quality Guaranteed</span>
-            <p>We stand behind our work with a satisfaction guarantee and clear, honest communication from start to finish.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="about-numbers-section">
-        <div className="about-numbers-grid">
-          <div className="number-card">
-            <div className="number">15+</div>
-            <div className="number-label">Years Experience</div>
-          </div>
-          <div className="number-card">
-            <div className="number">1,200+</div>
-            <div className="number-label">Projects Completed</div>
-          </div>
-          <div className="number-card">
-            <div className="number">98%</div>
-            <div className="number-label">Customer Satisfaction</div>
-          </div>
-          <div className="number-card">
-            <div className="number">2</div>
-            <div className="number-label">Year Warranty</div>
-          </div>
         </div>
       </section>
     </div>

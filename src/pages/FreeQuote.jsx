@@ -56,7 +56,12 @@ const FreeQuote = () => {
         </motion.div>
       )}
       
-      <section className="hero-section">
+      <section className="hero-section" style={{
+        backgroundImage: 'linear-gradient(rgba(1, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(/assets/book-your-slot.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}>
         <div className="container">
           <motion.div 
             className="hero-content"
@@ -86,9 +91,6 @@ const FreeQuote = () => {
 
       <section className="quote-form-section">
         <div className="quote-form-flex">
-          <div className="quote-form-image">
-            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80" alt="Painter at work" />
-          </div>
           <div className="quote-form-container">
             <QuoteForm initialData={initialData} />
           </div>

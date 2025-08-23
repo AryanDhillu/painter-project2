@@ -1221,23 +1221,12 @@
 
 .book-slot-content {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 1fr;
   gap: 3rem;
   background: #fff;
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
-
-.book-slot-image {
-  height: 600px;
-  overflow: hidden;
-}
-
-.book-slot-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .book-slot-form {
@@ -1373,10 +1362,6 @@
     grid-template-columns: 1fr;
   }
 
-  .book-slot-image {
-    height: 300px;
-  }
-
   .book-slot-form {
     padding: 2rem;
   }
@@ -1387,16 +1372,8 @@
     grid-template-columns: 1fr;
   }
 
-  .book-slot-image {
-    height: 400px;
-  }
-
   .book-slot-form h2 {
     font-size: 1.75rem;
-  }
-
-  .book-slot-image {
-    height: 250px;
   }
 } 
 

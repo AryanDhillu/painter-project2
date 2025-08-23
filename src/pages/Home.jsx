@@ -4,20 +4,20 @@ import { motion } from 'framer-motion';
 import { FaChevronLeft, FaChevronRight, FaPaintBrush, FaHome, FaBuilding, FaCheckCircle, FaStar, FaQuoteLeft, FaImages, FaPalette, FaCogs, FaArrowRight } from 'react-icons/fa';
 import './Home.css';
 import AnnouncementBanner from '../components/AnnouncementBanner';
-import heroImage from '../../public/assets/hero-s1.jpg';
-import heroImage2 from '../../public/assets/hero-s2.jpg';
-import heroImage3 from '../../public/assets/hero-s3.jpg';
-
-import howItWorks1 from '../../public/assets/how-it-works1.png';
-import howItWorks2 from '../../public/assets/how-it-works2.png';
-import howItWorks3 from '../../public/assets/how-it-works3.png';
-import bookSlotImage from '../../public/assets/book-your-slot.png';
-import ourWork1 from '../../public/assets/our-work1.png';
-import ourWork2 from '../../public/assets/our-work2.png';
-import ourWork3 from '../../public/assets/our-work3.png';
-import findColors1 from '../../public/assets/find-your-colors1.png';
-import swLogo from '../../public/assets/sw.jpg';
-import bmLogo from '../../public/assets/bm.jpg';
+// Use public asset paths instead of imports
+const heroImage = '/assets/hero-s1.jpg';
+const heroImage2 = '/assets/hero-s2.jpg';
+const heroImage3 = '/assets/hero-s3.jpg';
+const howItWorks1 = '/assets/how-it-works1.png';
+const howItWorks2 = '/assets/how-it-works2.png';
+const howItWorks3 = '/assets/how-it-works3.png';
+const bookSlotImage = '/assets/book-your-slot.png';
+const ourWork1 = '/assets/our-work1.png';
+const ourWork2 = '/assets/our-work2.png';
+const ourWork3 = '/assets/our-work3.png';
+const findColors1 = '/assets/find-your-colors1.png';
+const swLogo = '/assets/sw.jpg';
+const bmLogo = '/assets/bm.jpg';
 
 const heroSlides = [
   {
@@ -30,7 +30,7 @@ const heroSlides = [
   {
     title: 'Book a Free Site Visit',
     subtitle: 'Expert Painting with Outstanding Service and Attention to Detail',
-    background: `linear-gradient(135deg, rgba(1, 1, 1, 0.7), rgba(1, 1, 1, 0.7)), url(${heroImage2})`, // Classic US home
+    background: `linear-gradient(135deg, rgba(1, 1, 1, 0.7), rgba(1, 1, 1, 0.7)), url(${bookSlotImage})`, // Book your slot image
     cta: 'Book Now',
     ctaLink: '/free-quote',
   },
@@ -373,9 +373,6 @@ const Home = () => {
       <section className="book-slot-section">
         <div className="book-slot-container">
           <div className="book-slot-content">
-            <div className="book-slot-image">
-              <img src={bookSlotImage} alt="Book your free site visit" />
-            </div>
             <div className="book-slot-form">
               <h2>Book Your Free Site Visit</h2>
               <p>Select a one-hour slot between 9AM and 5PM — our professionals will visit your site for a free, no-obligation consultation.</p>

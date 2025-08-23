@@ -23,45 +23,75 @@
   padding: 0 2rem;
 }
 
-.hero-text-centered h1 {
+.interior-painting-page .hero-text-centered h1 {
   font-size: 3.2rem;
   font-weight: 500;
   margin-bottom: 1.4rem;
-  line-height: 1.0;
-  color: white;
+  line-height: 1.1;
+  color: rgb(255, 255, 255) !important;
+  background: none !important;
+  background-image: none !important;
+  background-color: transparent !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  -webkit-text-fill-color: rgb(255, 255, 255) !important;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
+  filter: brightness(1) contrast(1) !important;
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
 }
 
-.hero-text-centered p {
+.interior-painting-page .hero-text-centered p {
   font-size: 1.0rem;
   margin-bottom: 2rem;
-  opacity: 0.9;
+  opacity: 1;
   line-height: 1.6;
-  color: white;
+  color: rgb(255, 255, 255) !important;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+  background: none !important;
+  background-color: transparent !important;
+  -webkit-text-fill-color: rgb(255, 255, 255) !important;
+  filter: brightness(1) contrast(1) !important;
+  mix-blend-mode: normal !important;
 }
 
 .btn-yellow {
   background-color: #F4C542;
-  color: #000;
+  color: #333;
   border: none;
   padding: 1rem 2rem;
   font-size: 1.1rem;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
   display: inline-block;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(244, 197, 66, 0.3);
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  z-index: 10;
 }
 
 .btn-yellow:hover {
-  background-color: #FFC800;
+  background-color: #e5b73a;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
-  color: #000;
+  box-shadow: 0 6px 20px rgba(244, 197, 66, 0.4);
+  color: #333;
   text-decoration: none;
+}
+
+.btn-yellow:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(244, 197, 66, 0.3);
+}
+
+.btn-yellow:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(244, 197, 66, 0.3);
 }
 
 .hero-buttons {
@@ -193,6 +223,7 @@
 .transform-container {
   max-width: 1200px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .transform-header {
@@ -214,88 +245,29 @@
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
+  margin-bottom: 3rem;
 }
 
-.transform-cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-bottom: 40px;
+.transform-gallery {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+  scrollbar-width: thin;
 }
 
 .transform-card {
-  background: #ffffff;
-  border-radius: 16px;
+  flex: 0 0 auto;
+  width: 300px;
+  height: 380px;
+  border-radius: 8px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
 }
 
-.transform-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-}
-
-.transform-card-image {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-  border-radius: 16px;
-}
-
-.transform-card-image img {
+.transform-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 16px;
-}
-
-.transform-card-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-  padding: 20px;
-  color: white;
-}
-
-.transform-card-overlay h3 {
-  font-size: 1.1rem;
-  font-weight: 400;
-  color: white;
-  margin: 0;
-  text-align: center;
-}
-
-.transform-navigation {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  margin-top: 40px;
-}
-
-.nav-arrow {
-  width: 40px;
-  height: 40px;
-  background-color: #F4C542;
-  border: none;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #000;
-}
-
-.nav-arrow:hover {
-  background-color: #FFC800;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(244, 197, 66, 0.4);
 }
 
 /* Reviews Section */
@@ -491,9 +463,9 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .transform-cards {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+  .transform-card {
+    width: 250px;
+    height: 300px;
   }
 }
 
@@ -558,13 +530,13 @@
     font-size: 1rem;
   }
   
-  .transform-cards {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .transform-card {
+    width: 250px;
+    height: 300px;
   }
   
-  .transform-card-image {
-    height: 320px;
+  .transform-gallery {
+    gap: 0.5rem;
   }
 
   .reviews-container {
@@ -641,11 +613,5 @@
   
   .transform-header h2 {
     font-size: 1.75rem;
-  }
-  
-  .nav-arrow {
-    width: 36px;
-    height: 36px;
-    font-size: 0.9rem;
   }
 }
