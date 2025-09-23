@@ -57,7 +57,7 @@ const FreeQuote = () => {
       )}
       
       <section className="hero-section" style={{
-        backgroundImage: 'linear-gradient(rgba(1, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(/assets/book-your-slot.jpg)',
+        backgroundImage: 'linear-gradient(rgba(1, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(/assets/contactus-hero.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
@@ -72,20 +72,6 @@ const FreeQuote = () => {
             <h1>Get Your Free Quote</h1>
             <p>Ready to refresh your space? Request a fast, no-obligation estimate from our friendly team. We respond within 24 hours!</p>
           </motion.div>
-          <div className="trust-badges">
-            <div className="trust-badge">
-              <span role="img" aria-label="No Obligation">📝</span>
-              No Obligation
-            </div>
-            <div className="trust-badge">
-              <span role="img" aria-label="Fast Response">⚡</span>
-              Fast Response
-            </div>
-            <div className="trust-badge">
-              <span role="img" aria-label="100% Privacy">🔒</span>
-              100% Privacy
-            </div>
-          </div>
         </div>
       </section>
 
@@ -94,29 +80,6 @@ const FreeQuote = () => {
           <div className="quote-form-container">
             <QuoteForm initialData={initialData} />
           </div>
-        </div>
-      </section>
-
-      {/* Emergency Contact */}
-      <section className="emergency-contact section bg-primary">
-        <div className="container">
-          <motion.div
-            className="emergency-content"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-          >
-            <h2>Need Emergency Service?</h2>
-            <p>We offer emergency painting services for urgent situations. Available 24/7 for commercial clients.</p>
-            <div className="emergency-buttons">
-              <a href="tel:+1234567890" className="btn btn-cta btn-large">
-                Call Emergency Line
-              </a>
-              <a href="/contact" className="btn btn-outline btn-large">
-                Contact Us Directly
-              </a>
-            </div>
-          </motion.div>
         </div>
       </section>
     </div>
