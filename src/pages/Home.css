@@ -181,22 +181,28 @@
   }
 }
 
-/* Overlay logo displayed above the white underlay shape */
 .slide-right-overlay {
   position: absolute;
   left: 60%;
   transform: translate(-50%, -50%);
   top: 45%;
-  width: 105%;
+  width: 100%;
   max-width: 800px;
   height: auto;
-  z-index: 4; /* above text, decorative image, and underlay */
+  z-index: 4;
   pointer-events: none;
   display: block;
   object-fit: contain;
   filter: drop-shadow(0 8px 26px rgba(0,0,0,0.55));
-  /* Remove white background by making it transparent */
   mix-blend-mode: multiply;
+}
+
+/* ✅ Reduce size for XL screens */
+@media (min-width: 1400px) {
+  .slide-right-overlay {
+    width: 65%;
+    max-width: 700px; /* smaller than 800px */
+  }
 }
 
 @media (max-width: 1400px) {
@@ -219,7 +225,7 @@
 
 @media (max-width: 900px) {
   .slide-right-overlay {
-    display: none; /* hide overlay on smaller screens */
+    display: none;
   }
 }
 
@@ -256,6 +262,17 @@
   .slide-text {
     padding-right: 0;
     max-width: 700px;
+  }
+}
+
+/* Between 900px and 1200px, optionally hide the right-side art for better text readability */
+@media (max-width: 1200px) and (min-width: 901px) {
+  .slide-right-group {
+    display: none;
+  }
+  .slide-text {
+    padding-right: 0;
+    max-width: 900px;
   }
 }
 

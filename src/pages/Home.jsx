@@ -168,10 +168,8 @@ const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentReview, setCurrentReview] = useState(0);
   const [expandedStep, setExpandedStep] = useState(null);
-  // Prevent automatic slide advance while slide preparation is happening.
-  // Autoplay is disabled by default; call `window.resumeHeroAutoplay()` from the console
-  // or in code when prep is done to resume automatic advances.
-  const [autoPlay, setAutoPlay] = useState(false);
+  // Carousel autoplay (re-enabled by default). Use window.pauseHeroAutoplay()/resumeHeroAutoplay() to control if needed.
+  const [autoPlay, setAutoPlay] = useState(true);
   const [bookingData, setBookingData] = useState({
     fullName: '',
     phoneNo: '',
