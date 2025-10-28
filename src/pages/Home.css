@@ -72,6 +72,7 @@
   font-size: 0.75rem;
   color: #fff;
   width: fit-content;
+  box-shadow: 0 0 0 rgba(244,197,66,0), 0 0 0 rgba(10,91,132,0);
 }
 
 .sparkle-icon {
@@ -84,18 +85,18 @@
 
 .slide-text h1 {
   font-size: 3rem;
-  font-weight: 500;
+  font-weight: 700;
   margin: 0;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35), 0 0 14px rgba(244, 197, 66, 0.25);
   text-align: left;
-  line-height: 1.3;
+  line-height: 1.25;
   color: #fff;
-  letter-spacing: 2px;
-  max-width: 700px;
+  letter-spacing: 1px;
+  max-width: 900px;
 }
 
 .slide-text h2 {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 400;
   margin: 0;
   opacity: 0.95;
@@ -103,6 +104,18 @@
   line-height: 1.5;
   color: #fff;
   max-width: 850px;
+}
+
+/* Decorative accent bar under the H1 for a subtle highlight */
+.slide-text h1::after {
+  content: "";
+  display: block;
+  width: 110px;
+  height: 4px;
+  margin-top: 10px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--cta-yellow) 0%, var(--primary-blue) 100%);
+  box-shadow: 0 0 14px rgba(244,197,66,0.45), 0 0 24px rgba(10,91,132,0.35);
 }
 
 .slide-text .btn {
@@ -276,11 +289,59 @@
   }
 }
 
+/* Glow animations only when slide is active */
+.slide.active .slide-text h1 {
+  animation: heroGlow 3.8s ease-in-out infinite;
+}
+.slide.active .slide-text h2 {
+  animation: heroGlowSoft 4.8s ease-in-out infinite;
+}
+
+/* Glow for the small sparkle tag (first slide) */
+.slide.active .sparkle-tag {
+  animation: sparklePulse 3.6s ease-in-out infinite;
+}
+
+@keyframes heroGlow {
+  0% {
+    text-shadow:
+      0 2px 8px rgba(0,0,0,0.30),
+      0 0 8px rgba(244,197,66,0.18),
+      0 0 0 rgba(10,91,132,0);
+  }
+  100% {
+    text-shadow:
+      0 3px 10px rgba(0,0,0,0.35),
+      0 0 14px rgba(244,197,66,0.38),
+      0 0 20px rgba(10,91,132,0.30);
+  }
+}
+
+@keyframes heroGlowSoft {
+  0% { text-shadow: 0 1px 6px rgba(0,0,0,0.22), 0 0 5px rgba(244,197,66,0.10); }
+  100% { text-shadow: 0 2px 7px rgba(0,0,0,0.26), 0 0 10px rgba(244,197,66,0.22); }
+}
+
+@keyframes heroBtnPulse {
+  0% { box-shadow: 0 10px 25px rgba(244,197,66,0.30), 0 0 0 0 rgba(244,197,66,0.0); }
+  50% { box-shadow: 0 12px 30px rgba(244,197,66,0.45), 0 0 18px 4px rgba(244,197,66,0.25); }
+  100% { box-shadow: 0 10px 25px rgba(244,197,66,0.30), 0 0 0 0 rgba(244,197,66,0.0); }
+}
+
 .btn-cta {
   background-color: var(--cta-yellow);
   color: var(--charcoal);
   font-weight: 600;
   width: fit-content;
+  box-shadow: 0 10px 25px rgba(244,197,66,0.30);
+  animation: heroBtnPulse 3.6s ease-in-out infinite;
+}
+
+/* Subtle pulsing for the sparkle tag */
+@keyframes sparklePulse {
+  0% { box-shadow: 0 0 0 rgba(244,197,66,0.0), 0 0 0 rgba(10,91,132,0.0); }
+  50% { box-shadow: 0 0 12px rgba(244,197,66,0.35), 0 0 18px rgba(10,91,132,0.25); }
+  100% { box-shadow: 0 0 0 rgba(244,197,66,0.0), 0 0 0 rgba(10,91,132,0.0); }
 }
 
 .btn-large {

@@ -9,10 +9,11 @@
 /* Gallery Header */
 .gallery-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column; /* stack filters and subfilters vertically */
+  justify-content: center;
+  align-items: center; /* center align content */
   margin-bottom: var(--spacing-xl);
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
 }
 
 /* Gallery Filters */
@@ -29,6 +30,8 @@
   justify-content: center;
   gap: var(--spacing-sm);
   flex-wrap: wrap;
+  margin-top: calc(var(--spacing-xs)); /* appear just a little below main filters */
+  width: 100%;
 }
 
 .filter-btn {
