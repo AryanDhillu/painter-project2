@@ -4,8 +4,8 @@
 
 .hero-section {
   position: relative;
-  height: 80vh;
-  min-height: 600px;
+  height: 60vh; /* reduced per new request */
+  min-height: 480px; /* proportionally lowered */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -69,6 +69,8 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   max-width: 200px;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-content .btn.btn-primary:hover {
@@ -470,8 +472,8 @@
 /* Responsive Design for Hero Section */
 @media (max-width: 768px) {
   .hero-section {
-    height: 70vh;
-    min-height: 500px;
+    height: 55vh;
+    min-height: 420px;
   }
   
   .reviews-page .hero-content h1 {
@@ -491,8 +493,8 @@
 
 @media (max-width: 480px) {
   .hero-section {
-    height: 60vh;
-    min-height: 400px;
+    height: 50vh; /* slightly smaller */
+    min-height: 360px;
   }
   
   .reviews-page .hero-content h1 {

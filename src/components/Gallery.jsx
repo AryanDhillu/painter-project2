@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaTimes, FaChevronLeft, FaChevronRight, FaExpand, FaTrash, FaEdit } from 'react-icons/fa';
 import './Gallery.css';
@@ -59,21 +59,17 @@ const Gallery = ({ images = [], showFilters = true, limit = null, isAuthenticate
       if (filter === 'all') return true;
       if (filter === 'interior') {
         if (!st.includes('interior')) return false;
-        // If categories selected, show items whose category is in selection;
-        // include legacy items without category only when all categories are selected
-        if (selectedCategories.length > 0) {
-          if (catNorm) return selectedCategories.includes(catNorm);
-          return selectedCategories.length === INTERIOR_N.length; // show unclassified when all selected
-        }
-        return true;
+        // If none selected, hide all images
+        if (selectedCategories.length === 0) return false;
+        // Include items whose category is selected; include legacy unclassified only when all are selected
+        if (catNorm) return selectedCategories.includes(catNorm);
+        return selectedCategories.length === INTERIOR_N.length;
       }
       if (filter === 'exterior') {
         if (!st.includes('exterior')) return false;
-        if (selectedCategories.length > 0) {
-          if (catNorm) return selectedCategories.includes(catNorm);
-          return selectedCategories.length === EXTERIOR_N.length;
-        }
-        return true;
+        if (selectedCategories.length === 0) return false;
+        if (catNorm) return selectedCategories.includes(catNorm);
+        return selectedCategories.length === EXTERIOR_N.length;
       }
       if (filter === 'commercial') {
         return st.includes('commercial');
@@ -125,6 +121,18 @@ const Gallery = ({ images = [], showFilters = true, limit = null, isAuthenticate
     { value: 'exterior', label: 'Exterior' },
     { value: 'commercial', label: 'Commercial' }
   ];
+  
+  const isInteriorOrExterior = filter === 'interior' || filter === 'exterior';
+  const allList = filter === 'interior' ? INTERIOR_N : filter === 'exterior' ? EXTERIOR_N : [];
+  const allSelected = isInteriorOrExterior && selectedCategories.length === allList.length;
+  const noneSelected = isInteriorOrExterior && selectedCategories.length === 0;
+  const masterCheckboxRef = useRef(null);
+
+  useEffect(() => {
+    if (masterCheckboxRef.current) {
+      masterCheckboxRef.current.indeterminate = isInteriorOrExterior && !allSelected && !noneSelected;
+    }
+  }, [isInteriorOrExterior, allSelected, noneSelected, selectedCategories]);
 
   return (
     <div className="gallery-container">
@@ -152,6 +160,22 @@ const Gallery = ({ images = [], showFilters = true, limit = null, isAuthenticate
           </div>
           {(filter === 'interior' || filter === 'exterior') && (
             <div className="gallery-subfilters">
+              {/* Master checkbox control */}
+              <label className="filter-btn filter-checkbox" title="Select categories to show images">
+                <input
+                  ref={masterCheckboxRef}
+                  type="checkbox"
+                  checked={allSelected}
+                  onChange={(e) => {
+                    if (e.target.checked) {
+                      setSelectedCategories(allList);
+                    } else {
+                      setSelectedCategories([]);
+                    }
+                  }}
+                />
+                <span>Select a Category</span>
+              </label>
               {(filter === 'interior' ? INTERIOR_CATEGORIES : EXTERIOR_CATEGORIES).map(opt => {
                 const optNorm = normalize(opt);
                 const active = selectedCategories.includes(optNorm);
@@ -268,8 +292,17 @@ const Gallery = ({ images = [], showFilters = true, limit = null, isAuthenticate
 
       {displayImages.length === 0 && (
         <div className="no-results">
-          <h3>No projects found</h3>
-          <p>Try adjusting your filter selection</p>
+          {isInteriorOrExterior && noneSelected ? (
+            <>
+              <h3>Select a category to display images</h3>
+              <p>Use the checkbox or pick one or more categories above.</p>
+            </>
+          ) : (
+            <>
+              <h3>No projects found</h3>
+              <p>Try adjusting your filter selection</p>
+            </>
+          )}
         </div>
       )}
 

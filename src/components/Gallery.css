@@ -35,7 +35,7 @@
 }
 
 .filter-btn {
-  padding: var(--spacing-sm) var(--spacing-md);
+  padding: calc(var(--spacing-xs) + 2px) var(--spacing-sm); /* smaller overall */
   background: var(--white);
   border: 2px solid var(--medium-gray);
   border-radius: var(--radius-lg);
@@ -44,6 +44,29 @@
   cursor: pointer;
   transition: all var(--transition-fast);
   font-family: var(--font-heading);
+  font-size: 0.95rem; /* slightly smaller text */
+  line-height: 1.2;
+}
+
+/* Checkbox version of filter button */
+.filter-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+}
+
+.filter-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--primary-blue);
+  display: block;
+}
+
+.filter-checkbox input[type="checkbox"]:indeterminate {
+  background-color: var(--primary-blue);
+  border: 2px solid var(--primary-blue);
 }
 
 .filter-btn:hover {
@@ -417,7 +440,7 @@
   
   .filter-btn {
     padding: var(--spacing-xs) var(--spacing-sm);
-    font-size: 0.875rem;
+    font-size: 0.85rem; /* slightly reduced */
   }
   
   .gallery-grid {

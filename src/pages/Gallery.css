@@ -4,8 +4,8 @@
 
 .gallery-page .hero-section {
   position: relative;
-  height: 80vh;
-  min-height: 600px;
+  height: 60vh; /* reduced from 70vh per new request */
+  min-height: 480px; /* proportionally lowered */
   background: url('/assets/gallery-hero.jpg') center/cover no-repeat, #f0f0f0 !important;
   display: flex;
   align-items: center;
@@ -290,8 +290,8 @@
 
 @media (max-width: 768px) {
   .gallery-page .hero-section {
-    height: 70vh;
-    min-height: 500px;
+    height: 55vh; /* slightly smaller for mobile */
+    min-height: 420px;
   }
   
   .hero-content {

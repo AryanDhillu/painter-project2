@@ -132,11 +132,18 @@
   display: flex;
   gap: var(--spacing-md);
   justify-content: center;
+  align-items: center; /* ensure vertical centering */
   flex-wrap: wrap;
+  text-align: center;
 }
 
 .faq-contact-buttons .btn {
   min-width: 150px;
+  display: inline-flex; /* center label inside */
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Responsive Design */
@@ -509,8 +516,8 @@
 /* FAQ Page Hero Section Styles */
 .faq-page .hero-section {
   position: relative;
-  height: 80vh;
-  min-height: 600px;
+  height: 60vh; /* reduced further per request */
+  min-height: 480px; /* proportionally lowered */
   background: url('/assets/faq-hero.png') center/cover no-repeat, #f0f0f0 !important;
   display: flex;
   align-items: center;
@@ -558,8 +565,8 @@
 
 @media (max-width: 768px) {
   .faq-page .hero-section {
-    height: 70vh;
-    min-height: 500px;
+    height: 55vh; /* reduced */
+    min-height: 420px;
   }
   
   .faq-page .hero-content {
