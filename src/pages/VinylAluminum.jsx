@@ -13,7 +13,7 @@ const VinylAluminum = () => {
     <ExteriorPainting
       heroTitle="Vinyl & Aluminum Siding"
       heroSubtitle="Refresh and protect your home’s exterior with professional siding painting and restoration."
-      heroImageSrc="/assets/vinyl-and-aluminium-painting.png"
+      heroImageSrc="/assets/vinyl-siding-hero.jpg"
       galleryService="exterior"
       galleryCategory="Vinyl and Aluminum Siding"
     />

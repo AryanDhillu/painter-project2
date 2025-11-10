@@ -52,7 +52,8 @@ const ImageUploadModal = ({ isOpen, onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  if (!formData.imageUrl || !formData.caption || !formData.serviceType || !formData.category) return;
+  // Caption no longer required
+  if (!formData.imageUrl || !formData.serviceType || !formData.category) return;
 
     setError("");
     dispatch(
@@ -135,15 +136,14 @@ const ImageUploadModal = ({ isOpen, onClose }) => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="caption">Caption</label>
+              <label htmlFor="caption">Caption <span style={{fontWeight:400, fontStyle:'italic'}}>(optional)</span></label>
               <input
                 type="text"
                 id="caption"
                 name="caption"
                 value={formData.caption}
                 onChange={handleInputChange}
-                placeholder="Enter caption"
-                required
+                placeholder="Enter caption (optional)"
                 disabled={uploadLoading}
               />
             </div>

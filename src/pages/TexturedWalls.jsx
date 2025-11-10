@@ -13,7 +13,7 @@ const TexturedWalls = () => {
     <InteriorPainting
       heroTitle="Textured Wall & Ceiling Painting"
       heroSubtitle="Add depth and style to your home with expert textured wall and ceiling painting."
-      heroImageSrc="/assets/texturedwalls.png"
+  heroImageSrc="/assets/textured-walls-hero.jpg"
       galleryService="interior"
       galleryCategory="Textured Wall & Ceiling Painting"
     />
