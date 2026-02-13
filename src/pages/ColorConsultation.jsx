@@ -23,7 +23,7 @@ const ColorConsultation = () => {
             transition={{ duration: 0.8 }}
           >
             <h1>Color Consultation</h1>
-            <p>Coming Soon - Professional color consultation services</p>
+            <p>Coming Soon - Professional color consultation services will be avaible </p>
             
             <div className="consultation-features">
               <div className="feature-item">
